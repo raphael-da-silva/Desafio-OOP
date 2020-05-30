@@ -37,9 +37,9 @@ echo $upload->name;
 echo $upload->size;
 echo $upload->tmp_name;
 
-// Returna true se deu erro no upload 
+// Retorna "true" se deu erro no upload 
 // que vem do formulário
-// ou false caso contrário
+// ou "false" caso contrário
 echo $upload->hasError();
 
 if ($upload->execute('caminho/para/salvar.jpg')) {
@@ -47,4 +47,8 @@ if ($upload->execute('caminho/para/salvar.jpg')) {
 } else {
   echo 'Erro ao salvar o arquivo';
 }
+
+// Extra1: Criar métodos de de limpeza no nome do arquivo
+// Extra2: Validar o tamanho do arquivo $upload->maxSize('2mb') / false se o arquivo for maior
+
 ```
