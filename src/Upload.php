@@ -13,6 +13,10 @@ class Upload
     public function __construct(
         string $uploadName
     ){
+        if(!isset($_FILES[$uploadName])){
+            throw new Exception('Error on upload file.');
+        }
+
         $this->uploadInfo = $_FILES[$uploadName];
     }
 
